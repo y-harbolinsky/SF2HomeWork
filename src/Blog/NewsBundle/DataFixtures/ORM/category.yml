@@ -1,0 +1,6 @@
+Blog\NewsBundle\Entity\Category:
+    category1:
+        name: category1
+
+    category{1..20}:
+        name: <categoryName()>

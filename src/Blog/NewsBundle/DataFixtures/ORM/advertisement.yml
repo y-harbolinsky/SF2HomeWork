@@ -1,0 +1,9 @@
+Blog\NewsBundle\Entity\Advertisement:
+    category_id: <numberBetween(23, 42)>
+    moderator_id: <numberBetween(25, 27)>
+    title: <newTitle()>
+    content: <newContent()>
+    createdDate: <dateTime()>
+#    title: Title1
+#    content: kfjsdfasjfiojdfiajdijfa
+#    createdDate: <dateTime()>
