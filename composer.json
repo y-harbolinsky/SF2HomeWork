@@ -19,7 +19,8 @@
         "incenteev/composer-parameter-handler": "~2.0",
         "kriswallsmith/assetic": "1.2.*@dev",
         "symfony/assetic-bundle": "2.5.*@dev",
-        "monolog/monolog": "1.11.*@dev"
+        "monolog/monolog": "1.11.*@dev",
+        "doctrine/doctrine-fixtures-bundle": "2.2.*"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
