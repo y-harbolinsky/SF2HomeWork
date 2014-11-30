@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="Blog\NewsBundle\Repository\AdvertisementRepository")
  * @ORM\Table(name="advertisement")
  */
 class Advertisement
