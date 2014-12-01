@@ -13,8 +13,14 @@ class IndexController extends Controller
      */
     public function indexAction()
     {
+        $categories = $this->getDoctrine()
+                            ->getManager()
+                            ->getRepository('BlogNewsBundle:Category')
+                            ->findAll();
+
         return array(
-            'name' => 'green'
+            'name' => 'green',
+            'categories' => $categories
         );
     }
 }

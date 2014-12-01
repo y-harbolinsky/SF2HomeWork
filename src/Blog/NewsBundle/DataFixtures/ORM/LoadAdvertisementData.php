@@ -12,9 +12,7 @@ class LoadAdvertisementData implements FixtureInterface
         $objects = \Nelmio\Alice\Fixtures::load(
             __DIR__ . '/advertisement.yml',
             $manager, array(
-                'providers' => array(
-                    'newContent()' => $this->newContent(),
-                    'newTitle()' => $this->newTitle())
+                'providers' => array($this)
             )
         );
     }

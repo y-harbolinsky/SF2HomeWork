@@ -4,6 +4,7 @@ namespace Blog\NewsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\DateTime;
+use Doctrine\ORM\EntityRepository;
 
 /**
  * @ORM\Entity(repositoryClass="Blog\NewsBundle\Repository\CommentRepository")
