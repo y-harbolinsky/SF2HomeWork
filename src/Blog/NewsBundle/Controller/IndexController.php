@@ -2,8 +2,11 @@
 
 namespace Blog\NewsBundle\Controller;
 
+use Blog\NewsBundle\Entity\Contact;
+use Blog\NewsBundle\Form\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class IndexController extends Controller
 {
@@ -22,5 +25,18 @@ class IndexController extends Controller
             'name' => 'green',
             'categories' => $categories
         );
+    }
+
+    /**
+     * @Template
+     */
+    public function contactAction()
+    {
+        $contactForm = new Contact();
+        $form = $this->createForm(new ContactType(), $contactForm);
+
+        var_dump($_POST);
+
+        return array('form' => $form->createView());
     }
 }
