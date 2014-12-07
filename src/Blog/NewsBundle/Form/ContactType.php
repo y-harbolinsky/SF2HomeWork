@@ -4,6 +4,7 @@ namespace Blog\NewsBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 class ContactType extends AbstractType
 {
@@ -27,6 +28,13 @@ class ContactType extends AbstractType
         ));
         $builderInterface->add('save', 'submit', array(
             'label' => 'Contact us'
+        ));
+    }
+
+    public function setDefaultOptions(OptionsResolverInterface $optionsResolverInterface)
+    {
+        $optionsResolverInterface->setDefaults(array(
+            'dta_class' => 'Blog\NewsBundle\Entity\Contact'
         ));
     }
 

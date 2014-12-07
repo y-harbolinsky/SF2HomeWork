@@ -11,6 +11,13 @@ use Doctrine\ORM\Mapping as ORM;
 class Contact
 {
     /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    protected $id;
+
+    /**
      * @ORM\Column(type="string")
      */
     protected $name;
@@ -122,5 +129,15 @@ class Contact
     public function getBody()
     {
         return $this->body;
+    }
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
     }
 }

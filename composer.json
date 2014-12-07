@@ -21,7 +21,9 @@
         "symfony/assetic-bundle": "2.5.*@dev",
         "monolog/monolog": "1.11.*@dev",
         "doctrine/doctrine-fixtures-bundle": "2.2.*",
-        "nelmio/alice": "~1.7"
+        "nelmio/alice": "~1.7",
+        "stof/doctrine-extensions-bundle": "~1.1",
+        "gedmo/doctrine-extensions": "2.3.*@dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
