@@ -57,7 +57,7 @@ class Comment
 
     public function __construct()
     {
-        $this->createdDate = new DateTime();
+
     }
 
     /**
@@ -91,29 +91,6 @@ class Comment
     public function getComment()
     {
         return $this->comment;
-    }
-
-    /**
-     * Set createdDate
-     *
-     * @param \DateTime $createdDate
-     * @return Comment
-     */
-    public function setCreatedDate($createdDate)
-    {
-        $this->createdDate = $createdDate;
-
-        return $this;
-    }
-
-    /**
-     * Get createdDate
-     *
-     * @return \DateTime 
-     */
-    public function getCreatedDate()
-    {
-        return $this->createdDate;
     }
 
     /**

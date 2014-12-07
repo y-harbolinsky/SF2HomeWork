@@ -2,7 +2,9 @@
 
 namespace Blog\NewsBundle\Controller;
 
+use Blog\NewsBundle\Entity\Advertisement;
 use Blog\NewsBundle\Entity\Contact;
+use Blog\NewsBundle\Form\AdvertisementType;
 use Blog\NewsBundle\Form\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -38,5 +40,18 @@ class IndexController extends Controller
         var_dump($_POST);
 
         return array('form' => $form->createView());
+    }
+
+    /**
+     * @Template()
+     */
+    public function advertFormAction()
+    {
+        $advertisementForm = new Advertisement();
+        $form = $this->createForm(new AdvertisementType(), $advertisementForm);
+
+        return array(
+            'form' => $form->createView()
+        );
     }
 }

@@ -5,3 +5,7 @@ home:
 contact:
     path:       /contact
     defaults:   { _controller: BlogNewsBundle:Index:contact }
+
+advert_form:
+    path:       /advert_form
+    defaults:   { _controller: BlogNewsBundle:Index:advertForm }
