@@ -1,5 +1,9 @@
-<h1>Add new advertisement</h1>
+{% extends '::base.html.twig' %}
 
-<form method="post">
-    {{ form(form) }}
-</form>
+{% block body %}
+    <h1>Add new advertisement</h1>
+
+    <form method="post">
+        {{ form(form) }}
+    </form>
+{% endblock %}

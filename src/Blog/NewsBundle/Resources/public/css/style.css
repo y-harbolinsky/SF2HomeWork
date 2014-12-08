@@ -1,14 +1,14 @@
 
-#contact > div {
+.contact_form #contact > div {
     margin: 10px 0 15px 10px; width: 450px;
 }
 
 
-input {
+.contact_form input {
     float: right;
 }
 
 
-textarea {
+.contact_form textarea {
     float: right;
 }
