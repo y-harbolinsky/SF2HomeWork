@@ -9,6 +9,7 @@ use Blog\NewsBundle\Form\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class IndexController extends Controller
 {
@@ -50,8 +51,33 @@ class IndexController extends Controller
         $advertisementForm = new Advertisement();
         $form = $this->createForm(new AdvertisementType(), $advertisementForm);
 
+        var_dump($_POST);
+
         return array(
             'form' => $form->createView()
         );
     }
+
+    /**
+     * @param Request $request
+     * @Template()
+     */
+    public function createAdvertisementAction(Request $request)
+    {
+        if($request->isMethod('POST'))
+        {
+            $advertisement = new Advertisement();
+
+//            var_dump($request->request->get('advertisement'));
+//            var_dump($request->request->get('content'));
+//            var_dump($request->request->);
+
+            $advertisement->setTitle($request->get('title'));
+            $advertisement->setContent($request->get('content'));
+        }
+        var_dump($_POST);
+
+        return new Response('New response');
+    }
 }
+
