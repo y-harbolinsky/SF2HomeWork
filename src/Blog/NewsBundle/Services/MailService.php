@@ -4,19 +4,22 @@ namespace Blog\NewsBundle\Services;
 
 class MailService
 {
-    private $mailer;
-    private $message;
+    protected $mailer;
 
-    public function __construct(\Swift_Mailer $mailer, \Swift_Message $message)
+    public function setMailer(\Swift_Mailer $mailer)
     {
         $this->mailer = $mailer;
-        $this->message = $message;
     }
 
-    public function hello($name)
+    public function sendEmail()
     {
-        $this->mailer->send($this->message);
+        $message = \Swift_Message::newInstance()
+                    ->setSubject('Hello world')
+                    ->setFrom('email@amail.com')
+                    ->setTo('garbolinskui@ukr.net')
+                    ->setBody('Hello knmdknvf fvj odfv jodv sfj vsd vds');
 
-        return 'Hello, ' . $name;
+        $this->mailer->send($message);
+
     }
 }

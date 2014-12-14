@@ -23,4 +23,18 @@ class ServiceController extends Controller
             'str1' => $service->toLower($string1)
         );
     }
+
+    /**
+     * @Template()
+     */
+    public function sendAction()
+    {
+        $m = $this->get('my_mailer');
+
+        $m->sendEmail();
+
+        return array(
+            'name' => 'name'
+        );
+    }
 }

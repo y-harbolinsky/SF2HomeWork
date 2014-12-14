@@ -17,3 +17,7 @@ createAdvertisement:
 service:
     path:       /service
     defaults:   { _controller: BlogNewsBundle:Service:index }
+
+sendEmail:
+    path:       /send
+    defaults:   { _controller: BlogNewsBundle:Service:send }
