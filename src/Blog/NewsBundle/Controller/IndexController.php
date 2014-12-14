@@ -31,7 +31,7 @@ class IndexController extends Controller
     }
 
     /**
-     * @Template
+     * @Template()
      */
     public function contactAction()
     {
