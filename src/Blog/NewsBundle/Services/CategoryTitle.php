@@ -2,22 +2,42 @@
 
 namespace Blog\NewsBundle\Services;
 
-use Doctrine\Bundle\DoctrineBundle\DoctrineBundle;
+use Doctrine\ORM\EntityManager;
+use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 
 class CategoryTitle
 {
-    public function toUpper($str)
+    private $entityManager;
+
+    function __construct(EntityManager $em)
     {
-        return strtoupper($str);
+        $this->entityManager = $em;
     }
 
-    public function toLower($str)
+    /**
+     * @return array
+     * Функція повертая масив заголовків, довжина яких 50 символів
+     */
+    public function getShortTitle()
     {
-        return strtolower($str);
-    }
+        $names = array();
+        $array_titles = array();
+        $normalizer = new GetSetMethodNormalizer();
 
-    public function getGoodTitle()
-    {
-        return 'hello';
+        $titles = $this->entityManager->getRepository('BlogNewsBundle:Category')->findAll();
+
+        //Перетворюю об'єкт у масив
+        foreach($titles as $title)
+        {
+            $array_titles[] = $normalizer->normalize($title);
+        }
+
+        //Обрізаю категорії
+        foreach($array_titles as $titl)
+        {
+            $names[] = substr($titl['name'], 0, 50);
+        }
+
+        return $names;
     }
 }

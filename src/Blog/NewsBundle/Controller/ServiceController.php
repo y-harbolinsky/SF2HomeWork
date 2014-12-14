@@ -16,11 +16,11 @@ class ServiceController extends Controller
         $string = 'text in lowercase to upper';
         $string1 = 'TEXT IN UPPERCASE TO LOWER';
 
-        $r = $this->get('category_title');
+        $service = $this->get('test_service');
 
         return array(
-            'str' => $r->toUpper($string),
-            'str1' => $r->toLower($string1)
+            'str' => $service->toUpper($string),
+            'str1' => $service->toLower($string1)
         );
     }
 }

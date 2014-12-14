@@ -4,7 +4,12 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services
            http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
+        <service id="test_service" class="Blog\NewsBundle\Services\TestService">
+
+        </service>
+
         <service id="category_title" class="Blog\NewsBundle\Services\CategoryTitle">
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
         </service>
     </services>
 </container>
