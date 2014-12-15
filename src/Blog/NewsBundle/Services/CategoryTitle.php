@@ -17,7 +17,7 @@ class CategoryTitle
     /**
      * @return array
      */
-    public function getShortTitle()
+    public function getShortTitles()
     {
         $names = array();
         $array_titles = array();
