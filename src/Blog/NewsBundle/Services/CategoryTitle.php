@@ -16,7 +16,6 @@ class CategoryTitle
 
     /**
      * @return array
-     * Функція повертая масив заголовків, довжина яких 50 символів
      */
     public function getShortTitle()
     {
@@ -26,16 +25,16 @@ class CategoryTitle
 
         $titles = $this->entityManager->getRepository('BlogNewsBundle:Category')->findAll();
 
-        //Перетворюю об'єкт у масив
+        //object to array
         foreach($titles as $title)
         {
             $array_titles[] = $normalizer->normalize($title);
         }
 
-        //Обрізаю категорії
-        foreach($array_titles as $titl)
+        //cut title
+        foreach($array_titles as $title)
         {
-            $names[] = substr($titl['name'], 0, 50);
+            $names[] = substr($title['name'], 0, 50);
         }
 
         return $names;

@@ -55,11 +55,6 @@ class Comment
      */
     private $comment;
 
-    public function __construct()
-    {
-
-    }
-
     /**
      * Get id
      *
