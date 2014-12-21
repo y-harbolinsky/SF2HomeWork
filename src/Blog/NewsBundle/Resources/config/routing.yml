@@ -25,3 +25,11 @@ sendEmail:
 all_comments:
     path:       /comment
     defaults:   { _controller: BlogNewsBundle:Service:comment }
+
+categories:
+    path:       /categories
+    defaults:   { _controller: BlogNewsBundle:Category:index }
+
+category_show:
+    path:       /categories/{slug}
+    defaults:   { _controller: BlogNewsBundle:Category:showCategory

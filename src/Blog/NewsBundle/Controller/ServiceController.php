@@ -43,9 +43,9 @@ class ServiceController extends Controller
      */
     public function commentAction()
     {
-        $comment_repository = $this->get('blog.news.comment_repository');
+        $commentRepository = $this->get('blog.news.comment_repository');
 
-        $allComments = $comment_repository->getAllComments();
+        $allComments = $commentRepository->getAllComments();
 
         return array('comments' => $allComments);
     }
