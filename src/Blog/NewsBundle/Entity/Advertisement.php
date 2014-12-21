@@ -3,6 +3,7 @@
 namespace Blog\NewsBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\DateTime;
 use Doctrine\ORM\EntityRepository;
@@ -31,9 +32,22 @@ class Advertisement
     protected $content;
 
     /**
-     * @ORM\Column(type="datetime")
+     * @Gedmo\Timestampable(on="create")
+     * @ORM\Column(name="created", type="datetime")
      */
-    protected $createdDate;
+    private $created;
+
+    /**
+     * @Gedmo\Timestampable(on="update")
+     * @ORM\Column(name="updated", type="datetime")
+     */
+    private $updated;
+
+    /**
+     * @Gedmo\Slug(fields={"title"}, updatable=false)
+     * @ORM\Column(name="slug", type="string", unique=true)
+     */
+    private $slug;
 
     /**
      * @ORM\ManyToOne(targetEntity="Category")
@@ -55,7 +69,6 @@ class Advertisement
     public function __construct()
     {
         $this->comments = new ArrayCollection();
-        $this->createdDate = new DateTime();
     }
 
     /**
@@ -112,29 +125,6 @@ class Advertisement
     public function getContent()
     {
         return $this->content;
-    }
-
-    /**
-     * Set createdDate
-     *
-     * @param \DateTime $createdDate
-     * @return Advertisement
-     */
-    public function setCreatedDate($createdDate)
-    {
-        $this->createdDate = $createdDate;
-
-        return $this;
-    }
-
-    /**
-     * Get createdDate
-     *
-     * @return \DateTime 
-     */
-    public function getCreatedDate()
-    {
-        return $this->createdDate;
     }
 
     /**
@@ -214,5 +204,74 @@ class Advertisement
     public function getModerator()
     {
         return $this->moderator;
+    }
+
+    /**
+     * Set created
+     *
+     * @param \DateTime $created
+     * @return Advertisement
+     */
+    public function setCreated($created)
+    {
+        $this->created = $created;
+
+        return $this;
+    }
+
+    /**
+     * Get created
+     *
+     * @return \DateTime 
+     */
+    public function getCreated()
+    {
+        return $this->created;
+    }
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     * @return Advertisement
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime 
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Advertisement
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string 
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 }

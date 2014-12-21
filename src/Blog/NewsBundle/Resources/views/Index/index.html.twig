@@ -1,6 +1,10 @@
-Hello {{ name }}
-<br />
-{% for category in categories %}
-    {{ category.name }}
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    Hello {{ name }}
     <br />
-{% endfor %}
+    {% for category in categories %}
+        {{ category.name }}
+        <br />
+    {% endfor %}
+{% endblock %}

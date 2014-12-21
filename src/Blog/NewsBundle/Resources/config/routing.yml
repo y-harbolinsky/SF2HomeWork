@@ -1,3 +1,15 @@
 home:
     path:       /
     defaults:   { _controller: BlogNewsBundle:Index:index }
+
+contact:
+    path:       /contact
+    defaults:   { _controller: BlogNewsBundle:Index:contact }
+
+advert_form:
+    path:       /advert_form
+    defaults:   { _controller: BlogNewsBundle:Index:advertForm }
+
+createAdvertisement:
+    path:       /create_advert
+    defaults:   { _controller: BlogNewsBundle:Index:createAdvertisement }
