@@ -1,0 +1,4 @@
+Blog\NewsBundle\Entity\Comment:
+    comment{1..50}:
+        comment_message: <comments()>
+        createdDate: <dateTime()>

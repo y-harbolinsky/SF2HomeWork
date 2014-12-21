@@ -1,0 +1,6 @@
+Blog\NewsBundle\Entity\Advertisement:
+    advertisement{1..10}:
+        title: <newTitle()>
+        content: <newContent()>
+        createdDate: <dateTime()>
+
