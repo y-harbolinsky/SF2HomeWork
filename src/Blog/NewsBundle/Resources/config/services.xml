@@ -35,5 +35,10 @@
             <argument>BlogNewsBundle:Category</argument>
         </service>
 
+        <service id="advertisement.form.type"
+                 class="Blog\NewsBundle\Form\AdvertisementType">
+            <tag name="form.type" />
+        </service>
+
     </services>
 </container>

@@ -32,4 +32,4 @@ categories:
 
 category_show:
     path:       /categories/{slug}
-    defaults:   { _controller: BlogNewsBundle:Category:showCategory
+    defaults:   { _controller: BlogNewsBundle:Category:showCategory }
