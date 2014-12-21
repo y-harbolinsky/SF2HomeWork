@@ -16,5 +16,13 @@
                 <argument type="service" id="swiftmailer.mailer.default" />
             </call>
         </service>
+
+        <service id="blog.news.comment_repository"
+                class="Blog\NewsBundle\Repository\CommentRepository"
+                factory-service="doctrine.orm.default_entity_manager"
+                factory-method="getRepository">
+            <argument>BlogNewsBundle:Comment</argument>
+        </service>
+
     </services>
 </container>

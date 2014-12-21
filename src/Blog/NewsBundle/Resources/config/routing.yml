@@ -21,3 +21,7 @@ service:
 sendEmail:
     path:       /send
     defaults:   { _controller: BlogNewsBundle:Service:send }
+
+all_comments:
+    path:       /comment
+    defaults:   { _controller: BlogNewsBundle:Service:comment }

@@ -37,4 +37,16 @@ class ServiceController extends Controller
             'name' => 'name'
         );
     }
+
+    /**
+     * @Template()
+     */
+    public function commentAction()
+    {
+        $comment_repository = $this->get('blog.news.comment_repository');
+
+        $allComments = $comment_repository->getAllComments();
+
+        return array('comments' => $allComments);
+    }
 }

@@ -23,7 +23,7 @@ class Comment
     /**
      * @ORM\Column(type="text")
      */
-    protected $comment_message;
+    public $comment_message;
 
     /**
      * @Gedmo\Timestampable(on="create")
