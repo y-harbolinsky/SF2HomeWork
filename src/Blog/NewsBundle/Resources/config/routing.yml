@@ -16,15 +16,15 @@ createAdvertisement:
 
 service:
     path:       /service
-    defaults:   { _controller: BlogNewsBundle:Service:index }
+    defaults:   { _controller: BlogNewsBundle:TestServices:index }
 
 sendEmail:
     path:       /send
-    defaults:   { _controller: BlogNewsBundle:Service:send }
+    defaults:   { _controller: BlogNewsBundle:TestServices:send }
 
 all_comments:
     path:       /comment
-    defaults:   { _controller: BlogNewsBundle:Service:comment }
+    defaults:   { _controller: BlogNewsBundle:TestServices:comment }
 
 categories:
     path:       /categories

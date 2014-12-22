@@ -18,8 +18,8 @@ class IndexController extends Controller
      */
     public function indexAction()
     {
-        $category_title = $this->get('category_title');
-        $categories = $category_title->getShortTitles();
+        $categoryTitle = $this->get('category_title');
+        $categories = $categoryTitle->getShortTitles();
 
         return array(
             'name' => 'green',

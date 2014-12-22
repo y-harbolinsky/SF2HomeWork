@@ -11,7 +11,7 @@ class CategoryRepository extends EntityRepository
         return $this->findAll();
     }
 
-    public function getCategoryById($slug)
+    public function getCategoryBySlug($slug)
     {
         return $this->findBy(array('slug' => $slug));
     }

@@ -26,6 +26,6 @@ class CategoryController extends Controller
     {
         $categoryService = $this->get('blog.news.category_repository');
 
-        return array('category' => $categoryService->getCategoryById($slug));
+        return array('category' => $categoryService->getCategoryBySlug($slug));
     }
 }
