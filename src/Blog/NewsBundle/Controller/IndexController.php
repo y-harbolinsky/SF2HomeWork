@@ -67,5 +67,15 @@ class IndexController extends Controller
 
         return new Response('New response');
     }
+
+    /**
+     * @Template()
+     */
+    public function messageAction()
+    {
+        $message = $this->get('translator')->trans('hello.message');
+
+        return array('message' => $message);
+    }
 }
 
