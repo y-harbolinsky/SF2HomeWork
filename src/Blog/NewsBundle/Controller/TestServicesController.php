@@ -29,12 +29,12 @@ class TestServicesController extends Controller
      */
     public function sendAction()
     {
-        $m = $this->get('my_mailer');
+        $message = $this->get('my_mailer');
 
-        $m->sendEmail();
+        $message->sendEmail();
 
         return array(
-            'name' => 'name'
+            'message' => 'name'
         );
     }
 
