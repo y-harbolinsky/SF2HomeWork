@@ -1,2 +1,7 @@
 hello:
     message: Привіт світ!
+
+test:
+    message:
+        for:
+            twig: Тестове повідомлення для twig!

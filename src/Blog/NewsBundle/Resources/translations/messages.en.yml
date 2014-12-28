@@ -1,3 +1,8 @@
 hello:
     message: Hello world!
 
+test:
+    message:
+        for:
+            twig: Test message to twig!
+
