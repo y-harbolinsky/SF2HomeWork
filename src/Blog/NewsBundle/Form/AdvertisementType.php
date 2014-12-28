@@ -14,21 +14,21 @@ class AdvertisementType extends AbstractType
         $formBuilderInterface
             ->add('title', 'text', array(
                 'label' => 'Enter your title: ',
-                'required' => true
+//                'required' => false
             ))
             ->add('content', 'textarea', array(
                 'label' => 'Enter content: ',
-                'required' => true
+//                'required' => false
             ))
             ->add('category', 'entity', array(
                 'class' => 'BlogNewsBundle:Category',
                 'property' => 'name',
-                'required' => true
+//                'required' => false
             ))
             ->add('moderator', 'entity', array(
                 'class' => 'BlogNewsBundle:User',
                 'property' => 'firstName',
-                'required' => true
+//                'required' => false
             ))
             ->add('Save', 'submit', array(
                 'label' => 'Save'

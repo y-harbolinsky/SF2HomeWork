@@ -3,6 +3,7 @@
 namespace Blog\NewsBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity
@@ -18,25 +19,30 @@ class Contact
     protected $id;
 
     /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min=5, max=100)
      * @ORM\Column(type="string")
      */
     protected $name;
 
     /**
+     * @Assert\Email()
      * @ORM\Column(type="string")
      */
     protected $email;
 
     /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min=30, max=250)
      * @ORM\Column(type="string")
      */
-
     protected $subject;
 
     /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min=50)
      * @ORM\Column(type="text")
      */
-
     protected $body;
 
     /**
