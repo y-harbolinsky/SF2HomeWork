@@ -7,6 +7,10 @@ use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints\DateTime;
 use Doctrine\ORM\EntityRepository;
+use Entity\Category;
+use Blog\NewsBundle\Entity\Comment;
+use Blog\NewsBundle\Entity\User;
+use Doctrine\Common\Collections\Collection;
 
 /**
  * @ORM\Entity(repositoryClass="Blog\NewsBundle\Repository\AdvertisementRepository")
@@ -130,10 +134,10 @@ class Advertisement
     /**
      * Set category
      *
-     * @param \Blog\NewsBundle\Entity\Category $category
+     * @param Category $category
      * @return Advertisement
      */
-    public function setCategory(\Blog\NewsBundle\Entity\Category $category = null)
+    public function setCategory(Category $category = null)
     {
         $this->category = $category;
 
@@ -143,7 +147,7 @@ class Advertisement
     /**
      * Get category
      *
-     * @return \Blog\NewsBundle\Entity\Category 
+     * @return Category
      */
     public function getCategory()
     {
@@ -153,10 +157,10 @@ class Advertisement
     /**
      * Add comments
      *
-     * @param \Blog\NewsBundle\Entity\Comment $comments
+     * @param Comment $comments
      * @return Advertisement
      */
-    public function addComment(\Blog\NewsBundle\Entity\Comment $comments)
+    public function addComment(Comment $comments)
     {
         $this->comments[] = $comments;
 
@@ -166,9 +170,9 @@ class Advertisement
     /**
      * Remove comments
      *
-     * @param \Blog\NewsBundle\Entity\Comment $comments
+     * @param Comment $comments
      */
-    public function removeComment(\Blog\NewsBundle\Entity\Comment $comments)
+    public function removeComment(Comment $comments)
     {
         $this->comments->removeElement($comments);
     }
@@ -176,7 +180,7 @@ class Advertisement
     /**
      * Get comments
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return Collection
      */
     public function getComments()
     {
@@ -186,10 +190,10 @@ class Advertisement
     /**
      * Set moderator
      *
-     * @param \Blog\NewsBundle\Entity\user $moderator
+     * @param User $moderator
      * @return Advertisement
      */
-    public function setModerator(\Blog\NewsBundle\Entity\user $moderator = null)
+    public function setModerator(User $moderator = null)
     {
         $this->moderator = $moderator;
 
@@ -199,7 +203,7 @@ class Advertisement
     /**
      * Get moderator
      *
-     * @return \Blog\NewsBundle\Entity\user 
+     * @return User
      */
     public function getModerator()
     {

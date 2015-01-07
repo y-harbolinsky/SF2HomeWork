@@ -19,10 +19,8 @@ class IndexController extends Controller
      */
     public function indexAction()
     {
-        $categories = $this->getDoctrine()
-                            ->getManager()
-                            ->getRepository('BlogNewsBundle:Category')
-                            ->findAll();
+        $category_title = $this->get('category_title');
+        $categories = $category_title->getShortTitles();
 
         return array(
             'name' => 'green',
@@ -31,14 +29,12 @@ class IndexController extends Controller
     }
 
     /**
-     * @Template
+     * @Template()
      */
     public function contactAction()
     {
         $contactForm = new Contact();
         $form = $this->createForm(new ContactType(), $contactForm);
-
-        var_dump($_POST);
 
         return array('form' => $form->createView());
     }
@@ -50,8 +46,6 @@ class IndexController extends Controller
     {
         $advertisementForm = new Advertisement();
         $form = $this->createForm(new AdvertisementType(), $advertisementForm);
-
-        var_dump($_POST);
 
         return array(
             'form' => $form->createView()
@@ -67,15 +61,9 @@ class IndexController extends Controller
         if($request->isMethod('POST'))
         {
             $advertisement = new Advertisement();
-
-//            var_dump($request->request->get('advertisement'));
-//            var_dump($request->request->get('content'));
-//            var_dump($request->request->);
-
             $advertisement->setTitle($request->get('title'));
             $advertisement->setContent($request->get('content'));
         }
-        var_dump($_POST);
 
         return new Response('New response');
     }

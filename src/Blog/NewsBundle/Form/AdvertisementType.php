@@ -22,11 +22,13 @@ class AdvertisementType extends AbstractType
             ))
             ->add('category', 'entity', array(
                 'class' => 'BlogNewsBundle:Category',
-                'property' => 'name'
+                'property' => 'name',
+                'required' => true
             ))
             ->add('moderator', 'entity', array(
                 'class' => 'BlogNewsBundle:User',
-                'property' => 'firstName'
+                'property' => 'firstName',
+                'required' => true
             ))
             ->add('Save', 'submit', array(
                 'label' => 'Save'

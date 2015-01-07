@@ -13,3 +13,11 @@ advert_form:
 createAdvertisement:
     path:       /create_advert
     defaults:   { _controller: BlogNewsBundle:Index:createAdvertisement }
+
+service:
+    path:       /service
+    defaults:   { _controller: BlogNewsBundle:Service:index }
+
+sendEmail:
+    path:       /send
+    defaults:   { _controller: BlogNewsBundle:Service:send }
