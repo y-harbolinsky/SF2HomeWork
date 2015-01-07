@@ -1,0 +1,7 @@
+hello:
+    message: Bonjour le monde!
+
+test:
+    message:
+        for:
+            twig: Test message to twig(fr)!

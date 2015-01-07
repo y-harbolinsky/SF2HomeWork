@@ -33,3 +33,9 @@ categories:
 category_show:
     path:       /categories/{slug}
     defaults:   { _controller: BlogNewsBundle:Category:showCategory }
+
+message:
+    path:       /message/{_locale}
+    defaults:   { _controller: BlogNewsBundle:Index:message }
+    requirements:
+        _locale: en|fr|ua

@@ -19,8 +19,8 @@ class TestServicesController extends Controller
         $service = $this->get('test_service');
 
         return array(
-            'str' => $service->toUpper($stringToUpper),
-            'str1' => $service->toLower($stringToLower)
+            'testString1' => $service->toUpper($stringToUpper),
+            'testString2' => $service->toLower($stringToLower)
         );
     }
 
@@ -29,12 +29,12 @@ class TestServicesController extends Controller
      */
     public function sendAction()
     {
-        $m = $this->get('my_mailer');
+        $myMailer = $this->get('my_mailer');
 
-        $m->sendEmail();
+        $myMailer->sendEmail();
 
         return array(
-            'name' => 'name'
+            'message' => 'name'
         );
     }
 
@@ -45,7 +45,7 @@ class TestServicesController extends Controller
     {
         $commentRepository = $this->get('blog.news.comment_repository');
 
-        $allComments = $commentRepository->getAllComments();
+        $allComments = $commentRepository->findAll();
 
         return array('comments' => $allComments);
     }
