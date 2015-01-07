@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="Blog\NewsBundle\Repository\CategoryRepository")
  * @ORM\Table(name="category")
  */
 class Category
@@ -21,13 +21,13 @@ class Category
     /**
      * @ORM\Column(type="string")
      */
-    protected $name;
+    public $name;
 
     /**
      * @Gedmo\Slug(fields={"name"}, updatable=false)
      * @ORM\Column(name="slug", type="string", unique=true)
      */
-    private $slug;
+    public $slug;
 
     /**
      * Get id

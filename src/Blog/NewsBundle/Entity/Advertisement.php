@@ -11,6 +11,7 @@ use Entity\Category;
 use Blog\NewsBundle\Entity\Comment;
 use Blog\NewsBundle\Entity\User;
 use Doctrine\Common\Collections\Collection;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="Blog\NewsBundle\Repository\AdvertisementRepository")
@@ -26,22 +27,28 @@ class Advertisement
     protected $id;
 
     /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min=30, max=250)
      * @ORM\Column(type="string", length=250)
      */
     protected $title;
 
     /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min=250)
      * @ORM\Column(type="text")
      */
     protected $content;
 
     /**
+     * @Assert\DateTime()
      * @Gedmo\Timestampable(on="create")
      * @ORM\Column(name="created", type="datetime")
      */
     private $created;
 
     /**
+     * @Assert\DateTime()
      * @Gedmo\Timestampable(on="update")
      * @ORM\Column(name="updated", type="datetime")
      */

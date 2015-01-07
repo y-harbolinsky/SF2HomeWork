@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Add new advertisement</h1>
 
-    <form method="post" action="{{ path('createAdvertisement') }}">
+    <form method="post" action="{{ path('createAdvertisement') }}" novalidate="novalidate">
         {{ form(form) }}
     </form>
 {% endblock %}

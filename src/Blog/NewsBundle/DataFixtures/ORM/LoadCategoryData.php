@@ -19,7 +19,7 @@ class LoadCategoryData implements FixtureInterface
 
     public function categoryName()
     {
-        $categorys = array(
+        $categories = array(
             'Найдена древнейшая из сохранившихся статуэток',
             'Психические травмы влияют на потомство)))',
             'Ученые раскрыли секрет пингвинов',
@@ -32,6 +32,6 @@ class LoadCategoryData implements FixtureInterface
             'Марсоход Spirit застрял в песках Красной планеты',
         );
 
-        return $categorys[array_rand($categorys)];
+        return $categories[array_rand($categories)];
     }
 }

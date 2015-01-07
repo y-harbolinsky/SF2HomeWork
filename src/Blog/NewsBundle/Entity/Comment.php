@@ -23,7 +23,7 @@ class Comment
     /**
      * @ORM\Column(type="text")
      */
-    protected $comment_message;
+    public $commentMessage;
 
     /**
      * @Gedmo\Timestampable(on="create")
@@ -38,7 +38,7 @@ class Comment
     private $updated;
 
     /**
-     * @Gedmo\Slug(fields={"comment_message", "id"}, updatable=false)
+     * @Gedmo\Slug(fields={"commentMessage", "id"}, updatable=false)
      * @ORM\Column(name="slug", type="string", unique=true, length=255)
      */
     private $slug;
@@ -112,26 +112,26 @@ class Comment
     }
 
     /**
-     * Set comment_message
+     * Set Message
      *
      * @param string $commentMessage
      * @return Comment
      */
     public function setCommentMessage($commentMessage)
     {
-        $this->comment_message = $commentMessage;
+        $this->commentMessage = $commentMessage;
 
         return $this;
     }
 
     /**
-     * Get comment_message
+     * Get commentMessage
      *
      * @return string 
      */
     public function getCommentMessage()
     {
-        return $this->comment_message;
+        return $this->commentMessage;
     }
 
     /**

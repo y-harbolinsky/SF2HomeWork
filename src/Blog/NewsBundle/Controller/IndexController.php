@@ -4,7 +4,6 @@ namespace Blog\NewsBundle\Controller;
 
 use Blog\NewsBundle\Entity\Advertisement;
 use Blog\NewsBundle\Entity\Contact;
-use Blog\NewsBundle\Form\AdvertisementType;
 use Blog\NewsBundle\Form\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -19,8 +18,8 @@ class IndexController extends Controller
      */
     public function indexAction()
     {
-        $category_title = $this->get('category_title');
-        $categories = $category_title->getShortTitles();
+        $categoryTitle = $this->get('category_title');
+        $categories = $categoryTitle->getShortTitles();
 
         return array(
             'name' => 'green',
@@ -45,7 +44,8 @@ class IndexController extends Controller
     public function advertFormAction()
     {
         $advertisementForm = new Advertisement();
-        $form = $this->createForm(new AdvertisementType(), $advertisementForm);
+        $formType = $this->get('advertisement.form.type');
+        $form = $this->createForm($formType, $advertisementForm);
 
         return array(
             'form' => $form->createView()
