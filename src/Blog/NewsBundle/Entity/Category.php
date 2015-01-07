@@ -21,13 +21,13 @@ class Category
     /**
      * @ORM\Column(type="string")
      */
-    public $name;
+    private $name;
 
     /**
      * @Gedmo\Slug(fields={"name"}, updatable=false)
      * @ORM\Column(name="slug", type="string", unique=true)
      */
-    public $slug;
+    private $slug;
 
     /**
      * Get id
