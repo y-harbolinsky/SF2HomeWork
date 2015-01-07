@@ -12,8 +12,5 @@ use Doctrine\ORM\EntityRepository;
  */
 class CommentRepository extends EntityRepository
 {
-    public function getAllComments()
-    {
-        return $this->findAll();
-    }
+
 }

@@ -45,7 +45,7 @@ class TestServicesController extends Controller
     {
         $commentRepository = $this->get('blog.news.comment_repository');
 
-        $allComments = $commentRepository->getAllComments();
+        $allComments = $commentRepository->findAll();
 
         return array('comments' => $allComments);
     }
