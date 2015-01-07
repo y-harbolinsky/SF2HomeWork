@@ -19,8 +19,8 @@ class TestServicesController extends Controller
         $service = $this->get('test_service');
 
         return array(
-            'str' => $service->toUpper($stringToUpper),
-            'str1' => $service->toLower($stringToLower)
+            'testString1' => $service->toUpper($stringToUpper),
+            'testString2' => $service->toLower($stringToLower)
         );
     }
 
@@ -29,9 +29,9 @@ class TestServicesController extends Controller
      */
     public function sendAction()
     {
-        $message = $this->get('my_mailer');
+        $myMailer = $this->get('my_mailer');
 
-        $message->sendEmail();
+        $myMailer->sendEmail();
 
         return array(
             'message' => 'name'
