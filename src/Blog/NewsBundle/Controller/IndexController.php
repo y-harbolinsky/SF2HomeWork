@@ -33,7 +33,8 @@ class IndexController extends Controller
     public function contactAction()
     {
         $contactForm = new Contact();
-        $form = $this->createForm(new ContactType(), $contactForm);
+        $formType = $this->get('contact.form.type');
+        $form = $this->createForm($formType, $contactForm);
 
         return array('form' => $form->createView());
     }

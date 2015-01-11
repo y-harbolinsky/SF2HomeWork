@@ -40,5 +40,10 @@
             <tag name="form.type" />
         </service>
 
+        <service id="contact.form.type"
+                 class="Blog\NewsBundle\Form\ContactType">
+            <tag name="form.type" />
+        </service>
+
     </services>
 </container>
