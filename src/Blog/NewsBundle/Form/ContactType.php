@@ -12,19 +12,15 @@ class ContactType extends AbstractType
     {
         $builderInterface->add('name', 'text', array(
             'label' => 'Enter your name: ',
-            'required' => false
         ));
         $builderInterface->add('email', 'email', array(
             'label' => 'Enter your email: ',
-            'required' => false
         ));
         $builderInterface->add('subject', 'text', array(
             'label' => 'Enter your subject: ',
-            'required' => false
         ));
         $builderInterface->add('body', 'textarea', array(
             'label' => 'Enter your text: ',
-            'required' => false
         ));
         $builderInterface->add('save', 'submit', array(
             'label' => 'Contact us'
