@@ -135,19 +135,6 @@ class Comment
     }
 
     /**
-     * Set created
-     *
-     * @param \DateTime $created
-     * @return Comment
-     */
-    public function setCreated($created)
-    {
-        $this->created = $created;
-
-        return $this;
-    }
-
-    /**
      * Get created
      *
      * @return \DateTime 
@@ -155,19 +142,6 @@ class Comment
     public function getCreated()
     {
         return $this->created;
-    }
-
-    /**
-     * Set updated
-     *
-     * @param \DateTime $updated
-     * @return Comment
-     */
-    public function setUpdated($updated)
-    {
-        $this->updated = $updated;
-
-        return $this;
     }
 
     /**

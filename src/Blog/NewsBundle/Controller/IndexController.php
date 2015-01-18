@@ -4,7 +4,6 @@ namespace Blog\NewsBundle\Controller;
 
 use Blog\NewsBundle\Entity\Advertisement;
 use Blog\NewsBundle\Entity\Contact;
-use Blog\NewsBundle\Form\ContactType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -23,7 +22,7 @@ class IndexController extends Controller
 
         return array(
             'name' => 'green',
-            'categories' => $categories
+            'categories' => $categories,
         );
     }
 

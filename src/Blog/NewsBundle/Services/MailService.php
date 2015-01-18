@@ -20,6 +20,5 @@ class MailService
                     ->setBody('Hello knmdknvf fvj odfv jodv sfj vsd vds');
 
         $this->mailer->send($message);
-
     }
 }

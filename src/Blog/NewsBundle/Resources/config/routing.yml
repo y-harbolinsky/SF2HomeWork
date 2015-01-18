@@ -11,7 +11,7 @@ advert_form:
     defaults:   { _controller: BlogNewsBundle:Index:advertForm }
 
 createAdvertisement:
-    path:       /create_advert
+    path:       /create-advert
     defaults:   { _controller: BlogNewsBundle:Index:createAdvertisement }
 
 service:

@@ -26,13 +26,13 @@
         <service id="blog.news.comment_repository"
                  class="Blog\NewsBundle\Repository\CommentRepository"
                  parent="blog.news.repository">
-            <argument>BlogNewsBundle:Comment</argument>
+            <argument>Blog\NewsBundle\Entity\Comment</argument>
         </service>
 
         <service id="blog.news.category_repository"
                  class="Blog\NewsBundle\Repository\CategoryRepository"
                  parent="blog.news.repository">
-            <argument>BlogNewsBundle:Category</argument>
+            <argument>Blog\NewsBundle\Entity\Category</argument>
         </service>
 
         <service id="advertisement.form.type"

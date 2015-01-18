@@ -218,19 +218,6 @@ class Advertisement
     }
 
     /**
-     * Set created
-     *
-     * @param \DateTime $created
-     * @return Advertisement
-     */
-    public function setCreated($created)
-    {
-        $this->created = $created;
-
-        return $this;
-    }
-
-    /**
      * Get created
      *
      * @return \DateTime 
@@ -238,19 +225,6 @@ class Advertisement
     public function getCreated()
     {
         return $this->created;
-    }
-
-    /**
-     * Set updated
-     *
-     * @param \DateTime $updated
-     * @return Advertisement
-     */
-    public function setUpdated($updated)
-    {
-        $this->updated = $updated;
-
-        return $this;
     }
 
     /**

@@ -34,7 +34,7 @@ class ContactType extends AbstractType
     public function setDefaultOptions(OptionsResolverInterface $optionsResolverInterface)
     {
         $optionsResolverInterface->setDefaults(array(
-            'dta_class' => 'Blog\NewsBundle\Entity\Contact'
+            'data_class' => 'Blog\NewsBundle\Entity\Contact'
         ));
     }
 
