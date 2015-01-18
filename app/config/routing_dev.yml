@@ -19,3 +19,8 @@ _main:
 
 blog:
     resource: "@BlogNewsBundle/Resources/config/routing.yml"
+
+rest:
+    resource: "@RestUseRestBundle/Resources/config/routing.yml"
+
+

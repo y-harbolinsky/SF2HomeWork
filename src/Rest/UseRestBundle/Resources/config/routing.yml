@@ -1,0 +1,3 @@
+rest:
+    path:       /rest
+    defaults:   { _controller: RestUseRestBundle:Index:index }
