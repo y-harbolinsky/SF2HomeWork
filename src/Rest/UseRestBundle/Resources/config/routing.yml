@@ -1,3 +1,7 @@
 rest:
     path:       /rest
     defaults:   { _controller: RestUseRestBundle:Index:index }
+
+posts:
+    type:       rest
+    resource:   Rest\UseRestBundle\Controller\PostsController

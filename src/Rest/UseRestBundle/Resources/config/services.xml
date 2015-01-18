@@ -5,8 +5,11 @@
            http://symfony.com/schema/dic/services/services-1.0.xsd">
     <services>
 
-        <service>
-
+        <service id="post.post_repository"
+                 factory-service="doctrine.orm.default_entity_manager"
+                 factory-method="getRepository"
+                 class="Rest\UseRestBundle\Repository\PostRepository">
+            <argument>Rest\UseRestBundle\Entity\Post</argument>
         </service>
 
     </services>
