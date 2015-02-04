@@ -1,0 +1,13 @@
+Rest\UseRestBundle\Entity\Post:
+    exclusion_policy:   ALL
+    properties:
+        id:
+            expose:   true
+        title:
+            expose:   true
+        text:
+            expose:   true
+        created:
+            expose:   true
+        updated:
+            expose:   true
