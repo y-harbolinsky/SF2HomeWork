@@ -72,7 +72,7 @@ class Advertisement
     private $comments;
 
     /**
-     * @ORM\ManyToOne(targetEntity="user")
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="moderator_id", referencedColumnName="id")
      */
     private $moderator;
@@ -144,7 +144,7 @@ class Advertisement
      * @param Category $category
      * @return Advertisement
      */
-    public function setCategory(Category $category = null)
+    public function setCategory($category = null)
     {
         $this->category = $category;
 
@@ -200,7 +200,7 @@ class Advertisement
      * @param User $moderator
      * @return Advertisement
      */
-    public function setModerator(User $moderator = null)
+    public function setModerator($moderator = null)
     {
         $this->moderator = $moderator;
 

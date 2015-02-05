@@ -35,6 +35,12 @@
             <argument>Blog\NewsBundle\Entity\Category</argument>
         </service>
 
+        <service id="blog.advertisement.repository"
+                 class="Blog\NewsBundle\Repository\AdvertisementRepository"
+                 parent="blog.news.repository">
+            <argument>Blog\NewsBundle\Entity\Advertisement</argument>
+        </service>
+
         <service id="advertisement.form.type"
                  class="Blog\NewsBundle\Form\AdvertisementType">
             <tag name="form.type" />

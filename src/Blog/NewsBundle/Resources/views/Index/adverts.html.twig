@@ -1,0 +1,21 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="create_new">
+        <p><a href="{{ path('new_advert') }}">Create new advert!</a></p>
+    </div>
+    <div class="new">
+        {% for advert in adverts %}
+            <div>
+                <p><a href="{{ path('show_advert', { 'slug': advert.slug }) }}">{{ advert.title }}</a></p>
+            </div>
+            <div>
+                {{ advert.content|truncate(200) }}
+            </div>
+            <div class="date_created">
+                {{ advert.created|date("m/d/Y") }}
+            </div>
+            <div class="new_footer"></div>
+        {% endfor %}
+    </div>
+{% endblock %}

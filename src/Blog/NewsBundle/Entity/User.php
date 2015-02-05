@@ -5,6 +5,7 @@ namespace Blog\NewsBundle\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\ORM\EntityRepository;
+use Blog\NewsBundle\Entity\Comment;
 use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
@@ -207,10 +208,10 @@ class User
     /**
      * Set moderator
      *
-     * @param \Blog\NewsBundle\Entity\User $moderator
+     * @param User $moderator
      * @return User
      */
-    public function setModerator(\Blog\NewsBundle\Entity\User $moderator = null)
+    public function setModerator(User $moderator = null)
     {
         $this->moderator = $moderator;
 
@@ -220,7 +221,7 @@ class User
     /**
      * Get moderator
      *
-     * @return \Blog\NewsBundle\Entity\User 
+     * @return User
      */
     public function getModerator()
     {
@@ -230,10 +231,10 @@ class User
     /**
      * Add comments
      *
-     * @param \Blog\NewsBundle\Entity\Comments $comments
+     * @param Comment $comments
      * @return User
      */
-    public function addComment(\Blog\NewsBundle\Entity\Comments $comments)
+    public function addComment(Comment $comments)
     {
         $this->comments[] = $comments;
 
@@ -243,9 +244,9 @@ class User
     /**
      * Remove comments
      *
-     * @param \Blog\NewsBundle\Entity\Comments $comments
+     * @param Comment $comments
      */
-    public function removeComment(\Blog\NewsBundle\Entity\Comments $comments)
+    public function removeComment(Comment $comments)
     {
         $this->comments->removeElement($comments);
     }

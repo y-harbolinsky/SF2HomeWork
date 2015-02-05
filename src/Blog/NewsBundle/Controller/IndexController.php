@@ -41,11 +41,52 @@ class IndexController extends Controller
     /**
      * @Template()
      */
-    public function advertFormAction()
+    public function advertsAction()
     {
-        $advertisementForm = new Advertisement();
+        $adverts = $this->get('blog.advertisement.repository')->findBy([],
+                ['created' => 'desc']
+        );
+
+        return array(
+            'adverts' => $adverts
+        );
+    }
+
+    /**
+     * @param $slug
+     * @return array
+     * @Template()
+     */
+    public function showAdvertAction($slug)
+    {
+        $advertBySlug = $this->get('blog.advertisement.repository')->findBy(
+            array(
+                'slug' => $slug,
+            )
+        );
+
+        return array('advert' => $advertBySlug);
+    }
+
+    /**
+     * @Template()
+     */
+    public function newAdvertAction(Request $request)
+    {
+        $advertisement = new Advertisement();
         $formType = $this->get('advertisement.form.type');
-        $form = $this->createForm($formType, $advertisementForm);
+        $form = $this->createForm($formType, $advertisement);
+
+        $form->handleRequest($request);
+        if($form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($advertisement);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl(
+                'adverts'
+            ));
+        }
 
         return array(
             'form' => $form->createView()
@@ -53,19 +94,50 @@ class IndexController extends Controller
     }
 
     /**
-     * @param Request $request
+     * @param $id
+     * @return array
      * @Template()
      */
-    public function createAdvertisementAction(Request $request)
+    public function updateAdvertAction($id, Request $request)
     {
-        if($request->isMethod('POST'))
+        $advert = $this->get('blog.advertisement.repository')->find($id);
+        $formType = $this->get('advertisement.form.type');
+        $form = $this->createForm($formType, $advert);
+
+        $form->handleRequest($request);
+
+        if($form->isValid())
         {
-            $advertisement = new Advertisement();
-            $advertisement->setTitle($request->get('title'));
-            $advertisement->setContent($request->get('content'));
+            $em = $this->getDoctrine()->getManager();
+            $em->flush();
+
+            return $this->redirect($this->generateUrl(
+                'show_advert', array('slug' => $advert->getSlug())
+            ));
         }
 
-        return new Response('New response');
+        return array(
+            'form' => $form->createView()
+        );
+
+    }
+
+    public function deleteAdvertAction($id)
+    {
+        $advert = $this->get('blog.advertisement.repository')->find($id);
+
+        if($advert)
+        {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($advert);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl(
+                'adverts'
+            ));
+        }
+
+        return new Response('No advert');
     }
 
     /**

@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <div class="new">
+        {% for new in advert %}
+            <div>
+                <h1>{{ new.title }}</h1>
+            </div>
+            <div>
+                {{ new.content }}
+            </div>
+            <div class="date_created">
+                {{ new.created|date("m/d/Y") }}
+            </div>
+            <div class="delete_advert">
+                <p><a href="{{ path('delete_advert', { 'id': new.id }) }}">Delete this Advert</a></p>
+            </div>
+            <div class="update_advert">
+                <p><a href="{{ path('update_advert', { 'id': new.id }) }}">Update this Advert</a></p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
