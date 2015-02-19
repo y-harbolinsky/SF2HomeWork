@@ -12,5 +12,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class CommentRepository extends EntityRepository
 {
+    public function getCommentsByAdvert($id)
+    {
+        $qb = $this->getEntityManager()->createQuery(
+            'SELECT c
+            FROM BlogNewsBundle:Comment c
+            WHERE c.category = :advert_id
+            '
+        )->setParameter('advert_id', $id);
 
+        return $qb->getResult();
+    }
 }

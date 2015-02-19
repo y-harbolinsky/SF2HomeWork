@@ -4,12 +4,13 @@ namespace Blog\NewsBundle\Controller;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Response;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Security;
 
 class TestServicesController extends Controller
 {
     /**
      * @Template()
+     * @Security("has_role('ROLE_ADMIN')")
      */
     public function indexAction()
     {

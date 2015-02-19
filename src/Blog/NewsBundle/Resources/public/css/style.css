@@ -28,3 +28,7 @@
 .create_new {
     width: 70%; height: 100%; margin-left: 15%; margin-right: 15%; margin-top: 50px;
 }
+
+.comments {
+    height: 400px; background-color: greenyellow;
+}

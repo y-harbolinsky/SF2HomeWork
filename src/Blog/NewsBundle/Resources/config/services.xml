@@ -51,5 +51,8 @@
             <tag name="form.type" />
         </service>
 
+        <service id="webservice_user_provider" class="Blog\NewsBundle\Security\User\WebServiceUserProvider">
+        </service>
+        
     </services>
 </container>

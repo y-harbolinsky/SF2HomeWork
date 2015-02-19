@@ -65,7 +65,9 @@ class IndexController extends Controller
             )
         );
 
-        return array('advert' => $advertBySlug);
+        $comments = $this->get('blog.news.comment_repository')->getCommentsByAdvert($advertBySlug[0]->getId());
+
+        return array('advert' => $advertBySlug, 'comments' => $comments);
     }
 
     /**
