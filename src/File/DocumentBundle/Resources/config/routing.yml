@@ -1,0 +1,7 @@
+file_index:
+    path:       /test/file
+    defaults:   { _controller: FileDocumentBundle:Index:index }
+
+file_upload:
+    path:       /file/upload
+    defaults:   { _controller: FileDocumentBundle:Index:upload }

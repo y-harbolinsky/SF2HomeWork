@@ -1,0 +1,11 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <h1>File upload example test</h1>
+
+    <form method="post" action="" novalidate="novalidate" {{ form_enctype(form) }}>
+        {{ form(form) }}
+    </form>
+
+{% endblock %}
