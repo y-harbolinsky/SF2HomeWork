@@ -1,0 +1,14 @@
+
+.contact_form #contact > div {
+    margin: 10px 0 15px 10px; width: 450px;
+}
+
+
+.contact_form input {
+    float: right;
+}
+
+
+.contact_form textarea {
+    float: right;
+}

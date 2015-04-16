@@ -1,0 +1,41 @@
+home:
+    path:       /
+    defaults:   { _controller: BlogNewsBundle:Index:index }
+
+contact:
+    path:       /contact
+    defaults:   { _controller: BlogNewsBundle:Index:contact }
+
+advert_form:
+    path:       /advert_form
+    defaults:   { _controller: BlogNewsBundle:Index:advertForm }
+
+createAdvertisement:
+    path:       /create_advert
+    defaults:   { _controller: BlogNewsBundle:Index:createAdvertisement }
+
+service:
+    path:       /service
+    defaults:   { _controller: BlogNewsBundle:TestServices:index }
+
+sendEmail:
+    path:       /send
+    defaults:   { _controller: BlogNewsBundle:TestServices:send }
+
+all_comments:
+    path:       /comment
+    defaults:   { _controller: BlogNewsBundle:TestServices:comment }
+
+categories:
+    path:       /categories
+    defaults:   { _controller: BlogNewsBundle:Category:index }
+
+category_show:
+    path:       /categories/{slug}
+    defaults:   { _controller: BlogNewsBundle:Category:showCategory }
+
+message:
+    path:       /message/{_locale}
+    defaults:   { _controller: BlogNewsBundle:Index:message }
+    requirements:
+        _locale: en|fr|ua

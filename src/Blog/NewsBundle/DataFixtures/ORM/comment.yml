@@ -1,0 +1,3 @@
+Blog\NewsBundle\Entity\Comment:
+    comment{1..50}:
+        commentMessage: <comments()>

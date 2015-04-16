@@ -1,0 +1,8 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {% for title in category %}
+        {{ title.name }}
+    {% endfor %}
+
+{% endblock %}

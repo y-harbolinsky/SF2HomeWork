@@ -1,0 +1,49 @@
+<?xml version="1.0" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+           http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="test_service" class="Blog\NewsBundle\Services\TestService">
+        </service>
+
+        <service id="category_title" class="Blog\NewsBundle\Services\CategoryTitle">
+            <argument type="service" id="doctrine.orm.default_entity_manager" />
+        </service>
+
+        <service id="my_mailer" class="Blog\NewsBundle\Services\MailService">
+            <call method="setMailer">
+                <argument type="service" id="swiftmailer.mailer.default" />
+            </call>
+        </service>
+
+        <service id="blog.news.repository"
+                 factory-service="doctrine.orm.default_entity_manager"
+                 factory-method="getRepository"
+                 abstract="true">
+        </service>
+
+        <service id="blog.news.comment_repository"
+                 class="Blog\NewsBundle\Repository\CommentRepository"
+                 parent="blog.news.repository">
+            <argument>BlogNewsBundle:Comment</argument>
+        </service>
+
+        <service id="blog.news.category_repository"
+                 class="Blog\NewsBundle\Repository\CategoryRepository"
+                 parent="blog.news.repository">
+            <argument>BlogNewsBundle:Category</argument>
+        </service>
+
+        <service id="advertisement.form.type"
+                 class="Blog\NewsBundle\Form\AdvertisementType">
+            <tag name="form.type" />
+        </service>
+
+        <service id="contact.form.type"
+                 class="Blog\NewsBundle\Form\ContactType">
+            <tag name="form.type" />
+        </service>
+
+    </services>
+</container>

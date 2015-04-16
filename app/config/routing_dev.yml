@@ -16,3 +16,11 @@ _errors:
 
 _main:
     resource: routing.yml
+
+blog:
+    resource: "@BlogNewsBundle/Resources/config/routing.yml"
+
+rest:
+    resource: "@RestUseRestBundle/Resources/config/routing.yml"
+
+
