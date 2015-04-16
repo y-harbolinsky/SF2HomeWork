@@ -6,13 +6,29 @@ contact:
     path:       /contact
     defaults:   { _controller: BlogNewsBundle:Index:contact }
 
-advert_form:
-    path:       /advert_form
-    defaults:   { _controller: BlogNewsBundle:Index:advertForm }
+adverts:
+    path:       /adverts
+    defaults:   { _controller: BlogNewsBundle:Index:adverts }
 
-createAdvertisement:
-    path:       /create_advert
-    defaults:   { _controller: BlogNewsBundle:Index:createAdvertisement }
+show_advert:
+    path:       /show/{slug}
+    defaults:   { _controller: BlogNewsBundle:Index:showAdvert }
+
+new_advert:
+    path:       /advert/new
+    defaults:   { _controller: BlogNewsBundle:Index:newAdvert }
+
+update_advert:
+    path:       /advert/{id}/update
+    defaults:   { _controller: BlogNewsBundle:Index:updateAdvert }
+    requirements:
+        id: \d+
+
+delete_advert:
+    path:       /advert/{id}/delete
+    defaults:   { _controller: BlogNewsBundle:Index:deleteAdvert }
+    requirements:
+        id: \d+
 
 service:
     path:       /service

@@ -72,7 +72,7 @@ class Advertisement
     private $comments;
 
     /**
-     * @ORM\ManyToOne(targetEntity="user")
+     * @ORM\ManyToOne(targetEntity="User")
      * @ORM\JoinColumn(name="moderator_id", referencedColumnName="id")
      */
     private $moderator;
@@ -144,7 +144,7 @@ class Advertisement
      * @param Category $category
      * @return Advertisement
      */
-    public function setCategory(Category $category = null)
+    public function setCategory($category = null)
     {
         $this->category = $category;
 
@@ -200,7 +200,7 @@ class Advertisement
      * @param User $moderator
      * @return Advertisement
      */
-    public function setModerator(User $moderator = null)
+    public function setModerator($moderator = null)
     {
         $this->moderator = $moderator;
 
@@ -218,19 +218,6 @@ class Advertisement
     }
 
     /**
-     * Set created
-     *
-     * @param \DateTime $created
-     * @return Advertisement
-     */
-    public function setCreated($created)
-    {
-        $this->created = $created;
-
-        return $this;
-    }
-
-    /**
      * Get created
      *
      * @return \DateTime 
@@ -238,19 +225,6 @@ class Advertisement
     public function getCreated()
     {
         return $this->created;
-    }
-
-    /**
-     * Set updated
-     *
-     * @param \DateTime $updated
-     * @return Advertisement
-     */
-    public function setUpdated($updated)
-    {
-        $this->updated = $updated;
-
-        return $this;
     }
 
     /**

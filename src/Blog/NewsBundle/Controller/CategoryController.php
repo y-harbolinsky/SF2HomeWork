@@ -14,7 +14,7 @@ class CategoryController extends Controller
     {
         $categoryService = $this->get('blog.news.category_repository');
 
-        return array('categories' => $categoryService->getCategories());
+        return array('categories' => $categoryService->findAll());
     }
 
     /**
@@ -26,6 +26,6 @@ class CategoryController extends Controller
     {
         $categoryService = $this->get('blog.news.category_repository');
 
-        return array('category' => $categoryService->getCategoryBySlug($slug));
+        return array('category' => $categoryService->findBy(array('slug' => $slug)));
     }
 }

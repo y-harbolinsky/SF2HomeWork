@@ -5,7 +5,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallback: "%locale%" }
+    translator:      ~
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -72,6 +72,11 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+stof_doctrine_extensions:
+    orm:
+        default:
+            sluggable:    true
+            timestampable: true
 fos_rest:
     format_listener:  true
     routing_loader:
@@ -82,3 +87,14 @@ fos_rest:
             json: true
             xml: true
             yml: true
+
+services:
+    twig.extension.text:
+        class: Twig_Extensions_Extension_Text
+        tags:
+            - { name: twig.extension }
+
+fos_user:
+    db_driver:      orm
+    firewall_name:  main
+    user_class:     Blog\UserBundle\Entity\FOSUser
