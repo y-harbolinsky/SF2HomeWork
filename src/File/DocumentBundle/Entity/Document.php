@@ -19,7 +19,7 @@ class Document
     public $id;
 
     /**
-     * @ORM\Column(type="integer", length=255)
+     * @ORM\Column(type="string", length=255)
      * @Assert\NotBlank()
      */
     public $name;
@@ -68,6 +68,22 @@ class Document
     public function getFile()
     {
         return $this->file;
+    }
+
+    /**
+     * @param mixed $name
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
     }
 
     public function upload()
